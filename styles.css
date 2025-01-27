@@ -7,10 +7,13 @@ body {
   height: 100vh;
   margin: 0;
   background: linear-gradient(135deg, #040016, #170b5a);
+  overflow: hidden; /* Prevents overflow */
 }
 
 .container {
   text-align: center;
+  width: 100%;
+  overflow: auto; /* Allows the grid to scroll if necessary */
 }
 
 /* Heading and Score */
@@ -29,11 +32,12 @@ h1 {
 /* Game Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(8, 60px);
+  grid-template-columns: repeat(8, 60px);  /* Keeps 8 columns across all screen sizes */
   grid-gap: 4px;
   justify-content: center;
   margin: 0 auto;
-  /* background-color: rgba(128, 128, 128, 0.251); */
+  max-width: 100%;  /* Ensures grid doesn't overflow */
+  overflow: auto;  /* Makes the grid scrollable if necessary */
 }
 
 /* Candy Squares */
@@ -50,22 +54,14 @@ h1 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 768px) {
-  #score-container {
-    font-size: 1rem;
-  }
-
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
+/* Optional: Make grid scrollable on small devices */
 @media (max-width: 576px) {
-  #score-container {
-    font-size: 0.9rem;
+  .grid {
+    grid-template-columns: repeat(8, 60px);  /* Still 8 columns on small devices */
+    overflow-x: auto;  /* Allows horizontal scrolling if the grid overflows */
   }
 
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
+  .container {
+    overflow: hidden;  /* Ensures no overflow on the main container */
   }
 }
