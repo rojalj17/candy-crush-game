@@ -1,0 +1,51 @@
+/* Body and Container */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #040016, #170b5a);
+}
+
+.container {
+  text-align: center;
+}
+
+/* Heading and Score */
+h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+#score-container {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Game Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 60px);
+  grid-gap: 4px;
+  justify-content: center;
+  margin: 0 auto;
+  /* background-color: rgba(128, 128, 128, 0.251); */
+}
+
+/* Candy Squares */
+.candy-square {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: rgba(245, 245, 245, 0.214);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.candy-square:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
