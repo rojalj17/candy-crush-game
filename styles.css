@@ -1,50 +1,80 @@
-/* Body and Container */
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background: linear-gradient(135deg, #040016, #170b5a);
-}
-
-.container {
-  text-align: center;
-}
-
-/* Heading and Score */
-h1 {
-  color: #fff;
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-#score-container {
-  font-size: 1.5rem;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-/* Game Grid */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(8, 60px);  /* Keeps 8 columns across all screen sizes */
-  grid-gap: 4px;
-  justify-content: center;
-  margin: 0 auto;
-}
-
-/* Candy Squares */
-.candy-square {
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  background-color: rgba(245, 245, 245, 0.214);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.candy-square:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #040016, #170b5a);
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  /* Heading and Score */
+  h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  #score-container {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  /* Game Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);  /* Default to 8 columns on larger screens */
+    grid-gap: 4px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  /* Candy Squares */
+  .candy-square {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: rgba(245, 245, 245, 0.214);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .candy-square:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(6, 50px); /* 6 columns on smaller screens */
+    }
+    .candy-square {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(5, 48px); /* 5 columns on smaller screens */
+    }
+    .candy-square {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .grid {
+      grid-template-columns: repeat(4, 40px); /* 4 columns on very small screens */
+    }
+    .candy-square {
+      width: 40px;
+      height: 40px;
+    }
+  }
